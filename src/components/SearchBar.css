@@ -1,0 +1,145 @@
+.search-bar-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 6px 30px rgba(74, 144, 226, 0.2);
+  border-color: #4a90e2;
+  transform: translateY(-2px);
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.search-bar:focus-within .search-icon {
+  color: #4a90e2;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 15px 0;
+  font-size: 16px;
+  background: transparent;
+  color: #333;
+}
+
+.search-input::placeholder {
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.search-input:focus::placeholder {
+  color: #ccc;
+}
+
+.search-input:disabled {
+  color: #999;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #4a90e2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.clear-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: #999;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.clear-button:hover {
+  background: #f5f5f5;
+  color: #666;
+  transform: scale(1.1);
+}
+
+.clear-button:active {
+  transform: scale(0.95);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  .search-bar-container {
+    max-width: 100%;
+    margin: 0 auto 15px;
+  }
+  
+  .search-bar {
+    border-radius: 20px;
+  }
+  
+  .search-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .search-input {
+    padding: 12px 0;
+    font-size: 14px;
+  }
+  
+  .clear-button {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+  }
+  
+  .loading-spinner {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .spinner {
+    width: 18px;
+    height: 18px;
+  }
+} 
